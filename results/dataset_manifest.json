@@ -1,0 +1,155 @@
+{
+  "generated_at": "2026-10-28T20:56:42+00:00",
+  "versions": {
+    "python": "3.13.13",
+    "pandas": "2.3.2",
+    "rdkit": "2025.09.6",
+    "vina": "/usr/local/sbin/vina",
+    "openbabel": ""
+  },
+  "inputs": [
+    {
+      "path": "data/raw/chembl/chembl_bioactivity.csv",
+      "sha256": "3391dd70a920ad2829eb48348cb475f3fec9b07131827a1c397e3cc7a722ebe1"
+    },
+    {
+      "path": "data/raw/guide_to_pharmacology/5-HT2A_g2pharm.csv",
+      "sha256": "2b735c299de15f6f741a8fc71591ad47d7ba9b41280b18888b5b7753e658d303"
+    },
+    {
+      "path": "data/raw/pubchem/AID_1961773_datatable.csv",
+      "sha256": "51d927ba72f2d79dac10b9be2aa041c99b8ac2ca7175583853a3fafcb3c4a7e2"
+    },
+    {
+      "path": "data/raw/pubchem/AID_1961774_datatable.csv",
+      "sha256": "26f1516e305f9f7f5bb17da1817b95611e58e3bf9fac3205765a7eef4c21dd01"
+    },
+    {
+      "path": "data/raw/pubchem/AID_1961775_datatable.csv",
+      "sha256": "051224301a08bc0751ef90c844c2f4d04eee92a99200c9a1950120cc6679bc38"
+    }
+  ],
+  "files": [
+    {
+      "path": "data/processed/agonists.csv",
+      "rows": 373,
+      "size_bytes": 118195,
+      "sha256": "13dc8da7225b90208230c29726d43e5bf1fd2412ee96148d60fac1ad1f8270fa"
+    },
+    {
+      "path": "data/processed/antagonists.csv",
+      "rows": 221,
+      "size_bytes": 86032,
+      "sha256": "ae96d70de6be2ce31b786233643ddf5fc5d75972f5bcc5d5223bb3ed375caf07"
+    },
+    {
+      "path": "data/processed/binders.csv",
+      "rows": 7201,
+      "size_bytes": 1888628,
+      "sha256": "ffcc20fa2194b544b02449fe1c84c9423843c510dd6d275b87a1cc7c7a34c0d3"
+    },
+    {
+      "path": "data/processed/binding_only_unlabelled.csv",
+      "rows": 7201,
+      "size_bytes": 1888628,
+      "sha256": "ffcc20fa2194b544b02449fe1c84c9423843c510dd6d275b87a1cc7c7a34c0d3"
+    },
+    {
+      "path": "data/processed/docking_ligands.csv",
+      "rows": 6565,
+      "size_bytes": 3644598,
+      "sha256": "4b01713418599556f9bba54acf2fcb113eecd0a73e6702d325ead9ef17233008"
+    },
+    {
+      "path": "data/processed/experimental_evidence.csv",
+      "rows": 24112,
+      "size_bytes": 17475723,
+      "sha256": "38e9f1df48b5e29a237103fd6398156f720ed9ea32857b5863e27873c1159540"
+    },
+    {
+      "path": "data/processed/functional_labels.csv",
+      "rows": 10157,
+      "size_bytes": 2082902,
+      "sha256": "afa6a1897fd06786c21aa0f4b2869da5ef52e518138b0e05a9e08a987e377967"
+    },
+    {
+      "path": "data/processed/label_conflicts.csv",
+      "rows": 43,
+      "size_bytes": 10455,
+      "sha256": "fe43d859c59872618c23ff195ec6ed905129eca731c28f5fc60b6ff08f6e6b30"
+    },
+    {
+      "path": "data/processed/ligands_master.csv",
+      "rows": 10157,
+      "size_bytes": 2879674,
+      "sha256": "95c5be4aade8cbe5a05bbc0afcb5c26430a49265b466545eb865a159af726726"
+    },
+    {
+      "path": "results/counts_by_label.csv",
+      "rows": 10,
+      "size_bytes": 496,
+      "sha256": "668b5b28b929dd0b9232d8b12e4cee0a6ee70e3695aee6b0f127bc2871fa3a5c"
+    },
+    {
+      "path": "results/counts_by_source.csv",
+      "rows": 3,
+      "size_bytes": 464,
+      "sha256": "1a24f6338cce69df304ca854d87279c14cba48ca3eed38a7f31ca9430e85ea6d"
+    },
+    {
+      "path": "results/docking_ligands_exclusions.csv",
+      "rows": 3690,
+      "size_bytes": 1379739,
+      "sha256": "50632caaa8fdc318e05850d7f9874fefe27ac1c524029beb22f85e0d09c04f1f"
+    },
+    {
+      "path": "results/docking_ligands_qc.csv",
+      "rows": 10157,
+      "size_bytes": 2590409,
+      "sha256": "66cbea6491d4d7c057279261eb22f30ea5d0dd1cf56b1962a4f07116f4a48aea"
+    },
+    {
+      "path": "results/docking_ligands_summary.md",
+      "rows": null,
+      "size_bytes": 5013,
+      "sha256": "60dfda396f7105f0d2dabd6a7cd529c69784c9c3ee33b51f7101244d0d0b3578"
+    },
+    {
+      "path": "results/exclusion_log.csv",
+      "rows": 242,
+      "size_bytes": 20948,
+      "sha256": "df07dbd739ea238f0f9a29ab898d7b6bd3666c967a7cb6857b490413a8544237"
+    },
+    {
+      "path": "results/quality_report.md",
+      "rows": null,
+      "size_bytes": 3552,
+      "sha256": "dfe5c688df4c560f04e285a4900b59323d5062604968080339b07bba741f97a8"
+    },
+    {
+      "path": "results/source_audit.csv",
+      "rows": 1744,
+      "size_bytes": 437132,
+      "sha256": "66ccf029e53a854b9b4b13655cdb7e76c6c99f1ea084914eaeadccf6335d94ec"
+    },
+    {
+      "path": "results/source_overlap.csv",
+      "rows": 3,
+      "size_bytes": 730,
+      "sha256": "72daea62b9c9669047e5da024f8e49b9408b2f4b79d90474809c5180281e6fbd"
+    }
+  ],
+  "notes": [
+    "Rows are CSV data records excluding header; JSON/Markdown are null.",
+    "SDF records count as structural records; docking outputs were not produced.",
+    "Updated additively by build_docking_ligands.py; previous entries preserved.",
+    "Updated additively by build_docking_ligands.py; previous entries preserved.",
+    "Updated additively by build_docking_ligands.py; previous entries preserved.",
+    "SDF records count as structural records; docking outputs are not generated by the curation step.",
+    "Updated additively by build_docking_ligands.py; previous entries preserved.",
+    "Updated additively by build_docking_ligands.py; previous entries preserved.",
+    "Updated additively by build_docking_ligands.py; previous entries preserved.",
+    "Updated additively by build_docking_ligands.py; previous entries preserved.",
+    "Updated additively by build_docking_ligands.py; previous entries preserved."
+  ]
+}
