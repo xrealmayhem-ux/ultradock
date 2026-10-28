@@ -1,6 +1,6 @@
 # Selección y control de calidad de ligandos para docking 5-HT2A
 
-Generado: 2026-10-28T20:56:42+00:00
+Generado: 2026-10-28T22:42:35+00:00
 
 ## Método
 
@@ -11,27 +11,28 @@ Se incluyen anotaciones funcionales explícitas solo cuando proceden de evidenci
 ## Recuentos
 
 - Moléculas del inventario maestro revisadas: **10157**.
-- Moléculas seleccionadas: **6565**.
-- Estructuras válidas entre seleccionadas: **6565**.
-- Elegibles para pasar a preparación estructural: **6565**.
-- Conflictos entre clases funcionales incluidos como binder con binding confirmado: **7**.
-- Conflictos entre clases funcionales sin binding y excluidos: **3**.
-- Discrepancias de subtipo incluidas manteniendo la clase analítica: **32**.
+- Moléculas seleccionadas: **8714**.
+- Estructuras válidas entre seleccionadas: **8714**.
+- Incluidas para el conjunto de docking: **8714**.
+- Sin revisión química pendiente antes de preparar estructura: **6565**.
+- Conflictos entre clases funcionales incluidos como binder con binding confirmado: **10**.
+- Conflictos entre clases funcionales sin binding y excluidos: **0**.
+- Discrepancias de subtipo incluidas manteniendo la clase analítica: **35**.
 - Moléculas marcadas en `label_conflicts.csv` revisadas: **43**.
-- Moléculas antes sin clase funcional, reclasificadas como binder por evidencia de unión: **629**.
+- Moléculas antes sin clase funcional, reclasificadas como binder por evidencia de unión: **876**.
 - Moléculas antes sin clase funcional, excluidas por falta de unión: **1443**.
-- Moléculas excluidas por falta de clase admitida y binding: **1619**.
+- Moléculas excluidas por falta de clase admitida y binding: **1443**.
 - Registros de evidencia sin estructura enlazable, excluidos de docking: **98**.
-- Moléculas con etiqueta/evidencia suficiente, pero diferidas por revisión química: **2149**.
-- Binders antes sin clase concluyente que pasan ahora a revisión química: **247**.
-- Moléculas diferidas con múltiples fragmentos: **739**.
-- Moléculas diferidas con estereoquímica no especificada: **1612**.
+- Moléculas incluidas pero con revisión química pendiente: **2149**.
+- Binders antes sin clase concluyente incluidos con revisión química pendiente: **247**.
+- Incluidas con múltiples fragmentos: **739**.
+- Incluidas con estereoquímica no especificada: **1612**.
 
 | Etiqueta | Moléculas |
 |---|---:|
-| agonist | 186 |
-| antagonist | 191 |
-| binder | 6188 |
+| agonist | 374 |
+| antagonist | 253 |
+| binder | 8087 |
 
 ### Cobertura de evidencia integrada
 
@@ -59,7 +60,7 @@ Los espejos se conservan en `experimental_evidence.csv` y se señalan mediante `
 - SMILES original ausente entre seleccionadas: **0**.
 - SMILES original se recupera de los CSV raw cuando se encuentra una representación que RDKit mapea al mismo ligand_id; si no está disponible queda vacío y el estado lo indica.
 - Se conservan sales/múltiples fragmentos y se marcan para revisión; no se eliminan fragmentos, no se neutralizan estructuras, y no se fusionan tautómeros ni estados de protonación.
-- `eligible_for_structure_preparation` significa estructura parseable y evidencia admisible; no significa PDBQT preparado ni docking listo. `requires_chemical_review` sigue en el CSV seleccionado, pero se separa de la cuenta apta hasta resolver fragmentos/estereoquímica. Las tablas no contienen scores de docking.
+- `eligible_for_structure_preparation` significa estructura parseable y evidencia admisible sin revisión pendiente; `included_requires_chemical_review` significa incluida a solicitud para no perder ligandos/etiquetas, pero debe revisarse su fragmentación/estereoquímica antes de generar estructuras de docking. Ningún estado significa PDBQT preparado ni docking listo. Las tablas no contienen scores de docking.
 - Las 2.319 moléculas antes `unclassified` se revisan individualmente mediante sus filas de evidencia: solo pasan como binder si hay evidencia binding; el resto se exporta en exclusiones.
 - El inventario de evidencia disponible para PubChem se limita a los tres datatables locales iniciales; los metadatos de AIDs adicionales no aportan tablas de resultados.
 - Un ChEMBL assay con organismo experimental vacío se retiene solo si el target anotado es humano; la incertidumbre queda visible en la evidencia curada.
@@ -70,9 +71,6 @@ Los espejos se conservan en `experimental_evidence.csv` y se señalan mediante `
 |---|---:|
 | evidence_record_missing_or_invalid_structure | 98 |
 | no_supported_functional_or_binding_label | 1443 |
-| requires_chemical_review:multiple_fragments | 537 |
-| requires_chemical_review:multiple_fragments|stereochemistry_unspecified | 202 |
-| requires_chemical_review:stereochemistry_unspecified | 1410 |
 
 ## Archivos
 

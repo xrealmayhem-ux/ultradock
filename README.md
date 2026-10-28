@@ -4,10 +4,10 @@ Paquete autocontenido para transferir al clúster los ligandos operativos, el ge
 
 ## Contenido
 
-- `data/processed/docking_ligands.csv`: 6.565 ligandos elegibles para preparación estructural, con SMILES, etiquetas y trazabilidad.
+- `data/processed/docking_ligands.csv`: 8.714 ligandos con estructura parseable y etiqueta respaldada, con SMILES, etiquetas y trazabilidad. 6.565 no requieren revisión química; 2.149 están incluidos con `chemical_review_required=true` y deben revisarse antes de preparar estructuras.
 - `scripts/prepare_docking_sdf.py`, `scripts/rawstore.py`: generación de un conformero 3D por ligando y utilidades de checksum.
 - `receptors/7WC8.cif`, `receptors/9LL8.cif`, `receptors/9LLB.cif`: copias de los CIF ya presentes en `../docking/proteins/`.
-- `results/docking_ligands_summary.md`, `docking_ligands_exclusions.csv` y `dataset_manifest.json`: selección, exclusiones y manifiesto de la curación original.
+- `results/docking_ligands_summary.md`, `docking_ligands_qc.csv`, `docking_ligands_exclusions.csv` y `dataset_manifest.json`: selección, controles por molécula, exclusiones y manifiesto de la curación original.
 - `bundle_manifest.json`: checksums de los archivos incluidos en este paquete.
 
 ## Generar y validar el SDF en el clúster
