@@ -7,6 +7,7 @@ import csv
 import hashlib
 import json
 import math
+import os
 import re
 import shutil
 import subprocess
@@ -23,6 +24,19 @@ from rdkit.Chem.Scaffolds import MurckoScaffold
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "results" / "docking_recovery"
 AUDIT = ROOT / "results" / "docking_audit"
+VINA_GPU_DIR = Path(
+    os.environ.get("ULTRADOCK_VINA_GPU_DIR", Path.home() / "Vina-GPU")
+).expanduser().resolve()
+VINA_GPU_EXECUTABLE = VINA_GPU_DIR / "Vina-GPU"
+VINA_GPU_WRAPPER = VINA_GPU_DIR / "run_vina.sh"
+VINA_GPU_KERNEL = VINA_GPU_DIR / "Kernel2_Opt.bin"
+VINA_GPU_PARAMETERS = {
+    "scoring": "vina",
+    "thread": 1000,
+    "search_depth": 0,
+    "num_modes": 9,
+    "energy_range": 3,
+}
 LIGAND_SDF = ROOT / "structures" / "ligands" / "sdf" / "docking_ligands_selected_3d.sdf"
 SELECTION = ROOT / "data" / "processed" / "ligand_selection.csv"
 ATOM_MAP = AUDIT / "receptor_comparison" / "receptor_atom_comparison.csv"
@@ -88,13 +102,23 @@ def read_csv(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(stream))
 
 
-def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
+def write_csv(
+    path: Path,
+    rows: list[dict[str, Any]],
+    *,
+    lineterminator: str = "\r\n",
+) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     if not rows:
         raise ValueError(f"Refusing to write an empty CSV: {path}")
     fields = list(dict.fromkeys(key for row in rows for key in row))
     with path.open("w", encoding="utf-8", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=fields, extrasaction="ignore")
+        writer = csv.DictWriter(
+            stream,
+            fieldnames=fields,
+            extrasaction="ignore",
+            lineterminator=lineterminator,
+        )
         writer.writeheader()
         writer.writerows(rows)
 
@@ -1514,6 +1538,17 @@ def create_mass_docking_preflight(
     receptor_preparations: dict[str, dict[str, Any]],
     output_dir: Path,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    for path in (VINA_GPU_EXECUTABLE, VINA_GPU_WRAPPER, VINA_GPU_KERNEL):
+        if not path.is_file():
+            raise FileNotFoundError(f"Vina-GPU runtime file not found: {path}")
+    vina_gpu_version = subprocess.run(
+        [str(VINA_GPU_EXECUTABLE), "--version"],
+        capture_output=True,
+        text=True,
+        check=True,
+    ).stdout.strip()
+    if "Vina-GPU" not in vina_gpu_version:
+        raise RuntimeError(f"Unexpected Vina-GPU version output: {vina_gpu_version!r}")
     queue = create_microstate_review_queue(ligand_rows, output_dir)
     reviewed = {
         row["ligand_id"]: row
@@ -1622,26 +1657,22 @@ def create_mass_docking_preflight(
                     "ifp_script_sha256": sha256(
                         ROOT / "scripts" / "run_frozen_ifp.py"
                     ),
-                    "vina_executable_sha256": sha256(
-                        Path(shutil.which("vina") or "/usr/local/sbin/vina")
-                    ),
-                    "vina_version": "AutoDock Vina 1.2.7",
+                    "vina_executable": str(VINA_GPU_EXECUTABLE),
+                    "vina_executable_sha256": sha256(VINA_GPU_EXECUTABLE),
+                    "vina_wrapper": str(VINA_GPU_WRAPPER),
+                    "vina_wrapper_sha256": sha256(VINA_GPU_WRAPPER),
+                    "vina_kernel": str(VINA_GPU_KERNEL),
+                    "vina_kernel_sha256": sha256(VINA_GPU_KERNEL),
+                    "vina_version": vina_gpu_version,
                     "parameters_json": json.dumps(
-                        {
-                            "scoring": "vina",
-                            "exhaustiveness": BOX_PARAMETERS["exhaustiveness"],
-                            "num_modes": BOX_PARAMETERS["num_modes"],
-                            "energy_range": BOX_PARAMETERS["energy_range"],
-                            "cpu": BOX_PARAMETERS["cpu"],
-                        },
-                        sort_keys=True,
+                        VINA_GPU_PARAMETERS, sort_keys=True
                     ),
                     "seed": 4513000 + receptor_index * len(ligand_rows) + ligand_index,
                     "pilot_pose_reuse": "NOT_VERIFIED",
                 }
             )
     path = output_dir / "mass_docking_preflight.csv"
-    write_csv(path, manifest)
+    write_csv(path, manifest, lineterminator="\n")
     counts = Counter(row["status"] for row in manifest)
     blockers = {
         "microstate_reviews_pending": len(queue) - len(reviewed),
@@ -1814,7 +1845,7 @@ def write_reports(
             "",
             "Se conservaron las nueve categorías, incluso cuando la frecuencia es cero. ASP155 se inspeccionó como diagnóstico y no se impuso como filtro. Los scores/poses nuevos no se comparan como equivalentes con los antiguos porque cambiaron el receptor y la protonación de los ligandos; los resultados históricos se conservaron.",
             "",
-            f"Parámetros homogéneos del piloto: AutoDock Vina 1.2.7 CPU, scoring vina, exhaustiveness={BOX_PARAMETERS['exhaustiveness']}, num_modes={BOX_PARAMETERS['num_modes']}, energy_range={BOX_PARAMETERS['energy_range']}, CPU={BOX_PARAMETERS['cpu']}, seed explícito por combinación. Centro y dimensiones de caja iguales a las configuraciones originales.",
+            f"Parámetros homogéneos del piloto CPU: AutoDock Vina 1.2.7, scoring vina, exhaustiveness={BOX_PARAMETERS['exhaustiveness']}, num_modes={BOX_PARAMETERS['num_modes']}, energy_range={BOX_PARAMETERS['energy_range']}, CPU={BOX_PARAMETERS['cpu']}, seed explícito por combinación. Centro y dimensiones de caja iguales a las configuraciones originales.",
             "",
             f"Controles químicos y del pipeline se registran en `pilot_prolif/pilot_prolif_summary.json`. Errores de preparación/docking: {len(errors)}.",
         ]
@@ -1844,7 +1875,7 @@ def write_reports(
         "",
         "La validación ProLIF para el receptor 9LL8 corresponde al modelo anterior al ajuste conjunto LYS146/ASP218; el lote final actualizará docking e IFP en ese receptor.",
         "",
-        "Tras cerrar la cola y refrescar el manifiesto, ejecutar `python scripts/run_frozen_docking_batch.py --execute`. El proceso valida hashes y reanuda únicamente combinaciones con metadatos/pose coincidentes. Cuando termine, calcular IFP con `python scripts/run_frozen_ifp.py --batch-fingerprint <fingerprint> --execute`.",
+        "El lote final usa Vina-GPU (scoring vina, 1000 lanes, search_depth automático, 9 modos y energy_range=3); no equivale al exhaustiveness=8 del piloto CPU. El manifiesto congela hashes del binario, wrapper y kernel. Tras cerrar la cola, refrescar el preflight y ejecutar `python scripts/run_frozen_docking_batch.py --execute`. Cuando termine, calcular IFP con `python scripts/run_frozen_ifp.py --batch-fingerprint <fingerprint> --execute`.",
         "",
         "El piloto valida el cálculo de fingerprints, no aprueba por sí mismo la geometría de todos los receptores ni resuelve la selección de microestados. No iniciar el lote hasta congelar estas decisiones.",
     ]

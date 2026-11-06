@@ -1,0 +1,48 @@
+#################################################################
+# If you used Vina-GPU in your work, please cite:               #
+#                                                               #
+#Shidi, Tang, Chen Ruiqi, Lin Mengru, Lin Qingde,               #
+#Zhu Yanxiang, Wu Jiansheng, Hu Haifeng, and Ling Ming.         #
+#Accelerating AutoDock VINA with GPUs. ChemRxiv (2021).Print.   #
+#                                                               #
+# And also the origin AutoDock Vina paper:                      #
+# O. Trott, A. J. Olson,                                        #
+# AutoDock Vina: improving the speed and accuracy of docking    #
+# with a new scoring function, efficient optimization and       #
+# multithreading, Journal of Computational Chemistry 31 (2010)  #
+# 455-461                                                       #
+#                                                               #
+# DOI 10.1002/jcc.21334                                         #
+#                                                               #
+#################################################################
+
+Reading input ... done.
+Setting up the scoring function ... done.
+Analyzing the binding site ... done.
+Using random seed: 4514138
+
+Platform: NVIDIA CUDA
+Device: NVIDIA GeForce GTX 960
+
+Search depth is set to 5
+
+Perform docking|=======                              |
+Perform docking| =======                             |
+Perform docking|================done=================|
+GPU monte carlo runtime: 1.408 s
+Refining results ... done.
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1         -9.8      0.000      0.000
+   2         -9.7      1.662      1.975
+   3         -9.5      4.483      8.721
+   4         -9.4      3.051      6.946
+   5         -9.3      3.685      7.621
+   6         -9.3      3.144      6.992
+   7         -9.2      5.857      8.122
+   8         -9.2      3.533      4.240
+   9         -9.2      3.077      5.102
+Writing output ... done.
+Vina-GPU total runtime: 3.449 s

@@ -7,9 +7,18 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 import run_docking_recovery as recovery
+import run_frozen_docking_batch as frozen_batch
 
 
 class DockingRecoveryTests(unittest.TestCase):
+    def test_vina_gpu_receptor_content_removes_end_marker_only(self):
+        source = b"REMARK keep\r\nATOM atom\r\nEND\r\n"
+
+        self.assertEqual(
+            frozen_batch.vina_gpu_receptor_content(source),
+            b"REMARK keep\r\nATOM atom\r\n",
+        )
+
     def test_parse_bool_reads_csv_false_as_false(self):
         self.assertFalse(recovery.parse_bool("False"))
         self.assertFalse(recovery.parse_bool(""))

@@ -28,6 +28,14 @@ def file_hash(path: Path) -> str:
     return digest.hexdigest()
 
 
+def vina_gpu_receptor_content(content: bytes) -> bytes:
+    return b"".join(
+        line
+        for line in content.splitlines(keepends=True)
+        if line.strip() != b"END"
+    )
+
+
 def read_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -58,16 +66,31 @@ def run_manifest(manifest: list[dict[str, str]], preflight: dict[str, Any]) -> d
             "Docking batch blocked: resolve all manual-review entries first; "
             f"status counts={preflight['status_counts']}"
         )
-    executable = recovery.shutil.which("vina") or "/usr/local/sbin/vina"
-    if not Path(executable).is_file():
-        raise FileNotFoundError(f"AutoDock Vina executable not found: {executable}")
+    ready_rows = [row for row in manifest if row["status"] == "READY"]
+    if not ready_rows:
+        raise RuntimeError("Docking batch has no ready combinations")
+    engine_fields = (
+        "vina_executable", "vina_executable_sha256",
+        "vina_wrapper", "vina_wrapper_sha256",
+        "vina_kernel", "vina_kernel_sha256", "vina_version",
+    )
+    engine_identity = {key: ready_rows[0][key] for key in engine_fields}
+    if any(
+        {key: row[key] for key in engine_fields} != engine_identity
+        for row in ready_rows[1:]
+    ):
+        raise RuntimeError("Manifest contains inconsistent Vina-GPU runtimes")
+    executable = engine_identity["vina_executable"]
+    wrapper = engine_identity["vina_wrapper"]
     version = subprocess.run(
         [executable, "--version"], capture_output=True, text=True, check=True
     ).stdout.strip()
-    if "1.2.7" not in version:
-        raise RuntimeError(f"Expected AutoDock Vina 1.2.7, found {version!r}")
+    if version != engine_identity["vina_version"] or "Vina-GPU" not in version:
+        raise RuntimeError(
+            f"Vina-GPU version changed since preflight: "
+            f"{engine_identity['vina_version']!r} -> {version!r}"
+        )
 
-    ready_rows = [row for row in manifest if row["status"] == "READY"]
     batch_fingerprint = hashlib.sha256(
         json.dumps(
             [
@@ -79,6 +102,7 @@ def run_manifest(manifest: list[dict[str, str]], preflight: dict[str, Any]) -> d
                         "ligand_summary_sha256", "recovery_script_sha256",
                         "prolif_script_sha256", "batch_script_sha256",
                         "ifp_script_sha256", "vina_executable_sha256",
+                        "vina_wrapper_sha256", "vina_kernel_sha256",
                         "parameters_json", "seed",
                     )
                 }
@@ -123,6 +147,8 @@ def run_manifest(manifest: list[dict[str, str]], preflight: dict[str, Any]) -> d
             or file_hash(ROOT / "scripts" / "run_frozen_ifp.py")
             != row["ifp_script_sha256"]
             or file_hash(Path(executable)) != row["vina_executable_sha256"]
+            or file_hash(Path(wrapper)) != row["vina_wrapper_sha256"]
+            or file_hash(Path(row["vina_kernel"])) != row["vina_kernel_sha256"]
         ):
             raise RuntimeError(
                 f"Frozen input hash mismatch for {row['receptor']}:{row['ligand_id']}"
@@ -130,18 +156,32 @@ def run_manifest(manifest: list[dict[str, str]], preflight: dict[str, Any]) -> d
         parameters = json.loads(row["parameters_json"])
         box = read_json(box_path)
         run_dir = root / row["receptor"]
-        pose_dir, log_dir, config_dir = (
-            run_dir / name for name in ("poses", "logs", "configs")
+        pose_dir, log_dir, config_dir, input_dir = (
+            run_dir / name for name in ("poses", "logs", "configs", "inputs")
         )
-        for directory in (pose_dir, log_dir, config_dir):
+        for directory in (pose_dir, log_dir, config_dir, input_dir):
             directory.mkdir(parents=True, exist_ok=True)
+        gpu_receptor_path = input_dir / f"{row['receptor']}_vina_gpu.pdbqt"
+        receptor_content = receptor_path.read_bytes()
+        gpu_receptor_content = vina_gpu_receptor_content(receptor_content)
+        if gpu_receptor_path.exists():
+            if gpu_receptor_path.read_bytes() != gpu_receptor_content:
+                raise RuntimeError(
+                    f"Existing Vina-GPU receptor differs from frozen input: "
+                    f"{gpu_receptor_path}"
+                )
+        else:
+            gpu_receptor_path.write_bytes(gpu_receptor_content)
+        gpu_receptor_sha256 = file_hash(gpu_receptor_path)
         pose_path = pose_dir / f"{row['ligand_id']}.pdbqt"
         meta_path = pose_dir / f"{row['ligand_id']}.meta.json"
         log_path = log_dir / f"{row['ligand_id']}.log"
         config_path = config_dir / f"{row['ligand_id']}.json"
+        vina_config_path = config_dir / f"{row['ligand_id']}.txt"
         identity = {
             "ligand_sha256": row["ligand_sha256"],
             "receptor_sha256": row["receptor_sha256"],
+            "gpu_receptor_sha256": gpu_receptor_sha256,
             "receptor_pdb_sha256": row["receptor_pdb_sha256"],
             "box_sha256": row["box_sha256"],
             "ligand_summary_sha256": row["ligand_summary_sha256"],
@@ -150,6 +190,8 @@ def run_manifest(manifest: list[dict[str, str]], preflight: dict[str, Any]) -> d
             "batch_script_sha256": row["batch_script_sha256"],
             "ifp_script_sha256": row["ifp_script_sha256"],
             "vina_executable_sha256": row["vina_executable_sha256"],
+            "vina_wrapper_sha256": row["vina_wrapper_sha256"],
+            "vina_kernel_sha256": row["vina_kernel_sha256"],
             "parameters": parameters,
             "seed": int(row["seed"]),
             "vina_version": version,
@@ -181,6 +223,7 @@ def run_manifest(manifest: list[dict[str, str]], preflight: dict[str, Any]) -> d
             **identity,
             "ligand": row["ligand_pdbqt"],
             "receptor": row["receptor_pdbqt"],
+            "gpu_receptor": str(gpu_receptor_path.relative_to(ROOT)),
             "box": row["box_json"],
             "output": str(pose_path.relative_to(ROOT)),
         }
@@ -189,23 +232,29 @@ def run_manifest(manifest: list[dict[str, str]], preflight: dict[str, Any]) -> d
             encoding="utf-8",
         )
         temp_pose = pose_path.with_suffix(".pdbqt.tmp")
-        command = [
-            executable,
-            "--receptor", str(receptor_path),
-            "--ligand", str(ligand_path),
-            "--out", str(temp_pose),
-            "--center_x", str(box["center_x"]),
-            "--center_y", str(box["center_y"]),
-            "--center_z", str(box["center_z"]),
-            "--size_x", str(box["size_x"]),
-            "--size_y", str(box["size_y"]),
-            "--size_z", str(box["size_z"]),
-            "--exhaustiveness", str(parameters["exhaustiveness"]),
-            "--num_modes", str(parameters["num_modes"]),
-            "--energy_range", str(parameters["energy_range"]),
-            "--cpu", str(parameters["cpu"]),
-            "--seed", str(row["seed"]),
-        ]
+        vina_config_path.write_text(
+            "\n".join(
+                [
+                    f"receptor = {gpu_receptor_path}",
+                    f"ligand = {ligand_path}",
+                    f"out = {temp_pose}",
+                    f"center_x = {box['center_x']}",
+                    f"center_y = {box['center_y']}",
+                    f"center_z = {box['center_z']}",
+                    f"size_x = {box['size_x']}",
+                    f"size_y = {box['size_y']}",
+                    f"size_z = {box['size_z']}",
+                    f"thread = {parameters['thread']}",
+                    f"search_depth = {parameters['search_depth']}",
+                    f"num_modes = {parameters['num_modes']}",
+                    f"energy_range = {parameters['energy_range']}",
+                    f"seed = {row['seed']}",
+                    "",
+                ]
+            ),
+            encoding="utf-8",
+        )
+        command = [wrapper, f"--config={vina_config_path}"]
         result = subprocess.run(
             command, capture_output=True, text=True, timeout=1800
         )
@@ -282,7 +331,11 @@ def run_manifest(manifest: list[dict[str, str]], preflight: dict[str, Any]) -> d
         json.dumps(
             {
                 "batch_fingerprint": batch_fingerprint,
+                "engine": "Vina-GPU",
                 "vina_version": version,
+                "vina_executable_sha256": engine_identity["vina_executable_sha256"],
+                "vina_kernel_sha256": engine_identity["vina_kernel_sha256"],
+                "parameters": json.loads(ready_rows[0]["parameters_json"]),
                 "expected_runs": len(ready_rows),
                 "counts": counts,
             },

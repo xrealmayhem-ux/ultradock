@@ -1,0 +1,29 @@
+{
+  "ligand_sha256": "8d3c7c5db0fa4b382bf30c7847b1eab17ee2f61dc999c743eb175ecb96f57564",
+  "receptor_sha256": "00eb36cce4f0017af386e46ceac1f00c82be8444a2020762f507ef5060cd16d4",
+  "gpu_receptor_sha256": "90330f9eaa587b1cb620a0a4206ae1fd943f94c2f5a20ca3af996fab64582cd0",
+  "receptor_pdb_sha256": "20ab018e3c397a0bee64c82300ec0af4b18e15f70a4009d8eb2185ac1e210e50",
+  "box_sha256": "87f59abe8eed25e4823336026c1080e5d76eae542e13c83e43d78d56661ecfa4",
+  "ligand_summary_sha256": "1f884d302ff3796647cb6c7cfb4e622f15aa0db7c3f1f62891b225fecbebec95",
+  "recovery_script_sha256": "612804c973c8d838505e6f9234ef9b24d1e7630c37954a024981d0c93ec1b68d",
+  "prolif_script_sha256": "001805143a3fea464756905aeb920bbd0d4c722c3784b97f452866a99480c96a",
+  "batch_script_sha256": "40586b7a798e055be80b6fd2d7d17ed5fb1cea154eb9bf975f125b8aa667a6c3",
+  "ifp_script_sha256": "d6ca8ada06c12256cffd2467517ee161f23c44f9148f685c4c0ee01f000e39c5",
+  "vina_executable_sha256": "4a42c181cc84db94ed7ccb8cc5681bf87115ac5defdc341572120bb73bc4d081",
+  "vina_wrapper_sha256": "2a2c612701b4dfb2ac9f9e735d73fe83f43c7a735db8176e7aed7725083fbb51",
+  "vina_kernel_sha256": "ed026e470441c0e7958b8c88cfe9e0ee355417daf71612ecdb36c9011f10812b",
+  "parameters": {
+    "energy_range": 3,
+    "num_modes": 9,
+    "scoring": "vina",
+    "search_depth": 0,
+    "thread": 1000
+  },
+  "seed": 4513871,
+  "vina_version": "Vina-GPU",
+  "ligand": "results/docking_recovery/ligand_preparation/pdbqt/LIG_BGMZUEKZENQUJY-SSDOTTSWSA-N.pdbqt",
+  "receptor": "results/docking_recovery/receptor_preparation/9LLB_recovered.pdbqt",
+  "gpu_receptor": "results/docking_recovery/final_docking/a597647899a71efe/9LLB/inputs/9LLB_vina_gpu.pdbqt",
+  "box": "config/boxes/9llb_box.json",
+  "output": "results/docking_recovery/final_docking/a597647899a71efe/9LLB/poses/LIG_BGMZUEKZENQUJY-SSDOTTSWSA-N.pdbqt"
+}

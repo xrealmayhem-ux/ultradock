@@ -1,0 +1,20 @@
+{
+  "batch_fingerprint": "a597647899a71efe",
+  "engine": "Vina-GPU",
+  "vina_version": "Vina-GPU",
+  "vina_executable_sha256": "4a42c181cc84db94ed7ccb8cc5681bf87115ac5defdc341572120bb73bc4d081",
+  "vina_kernel_sha256": "ed026e470441c0e7958b8c88cfe9e0ee355417daf71612ecdb36c9011f10812b",
+  "parameters": {
+    "energy_range": 3,
+    "num_modes": 9,
+    "scoring": "vina",
+    "search_depth": 0,
+    "thread": 1000
+  },
+  "expected_runs": 1269,
+  "counts": {
+    "completed": 337,
+    "resumed": 932,
+    "failed": 0
+  }
+}
