@@ -22,6 +22,12 @@ La ejecución crea `structures/docking_ligands_3d.sdf` y `structures/docking_lig
 
 El SDF es un conformero inicial para preparación posterior: **no es PDBQT y no está listo por sí solo para docking**.
 
+## Recuperación 5-HT2A, docking y ProLIF
+
+Se incorporó un flujo reproducible para los receptores 7WC8, 9LL8 y 9LLB, con preparación localizada, estados representativos de ligandos, un manifiesto con hashes y ejecución reanudable de Vina seguida por ProLIF. Los pasos, el checkpoint transferido y los comandos para continuar están en [`docs/RECOVERY_DOCKING_5HT2A.md`](docs/RECOVERY_DOCKING_5HT2A.md).
+
+La instantánea incluye 92 de 1.269 dockings finales disponibles. Al continuar, el ejecutor valida hashes y reutiliza únicamente esos 92 resultados con metadatos coincidentes; procesa el resto sin duplicarlos. Los archivos originales del paquete de ligandos no se reemplazan.
+
 ## Receptores
 
 Los tres CIF son estructuras de HTR2A (7WC8: complejo con lumateperona; 9LL8: complejo con psilocina-Gi; 9LLB: complejo con DOI-NBOMe-Gq). Se incluyen como opciones, sin modificar ni convertir. Aún hay que seleccionar el receptor y definir preparación, estado/cofactores y caja de docking antes de acoplar ligandos. Este paquete no ejecuta docking.

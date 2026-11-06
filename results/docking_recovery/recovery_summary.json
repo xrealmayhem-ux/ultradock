@@ -1,0 +1,659 @@
+{
+  "generated_at_utc": "2026-11-06T16:06:26.618274+00:00",
+  "conclusion": "APROBADO CON LIMITACIONES DOCUMENTADAS",
+  "tools": {
+    "vina": "AutoDock Vina v1.2.7",
+    "openbabel": "Open Babel 3.1.0",
+    "rdkit": "2025.09.6",
+    "dimorphite_dl": "2.0.2",
+    "prolif": "2.2.0",
+    "pdb2pqr": "3.8.0"
+  },
+  "parameters": {
+    "pH": 7.4,
+    "docking": {
+      "exhaustiveness": 8,
+      "num_modes": 9,
+      "energy_range": 3,
+      "cpu": 4
+    },
+    "scoring": "vina",
+    "pilot_ligands": 12,
+    "mass_redocking_executed": false,
+    "full_423_processed": false
+  },
+  "receptor_preparations": {
+    "7WC8": {
+      "receptor": "7WC8",
+      "source_pdb": "structures/7WC8_chainA_protein.pdb",
+      "source_pdbqt": "structures/7WC8_chainA_protein.pdbqt",
+      "prepared_pdb": "results/docking_recovery/receptor_preparation/7WC8_recovered.pdb",
+      "prepared_pdbqt": "results/docking_recovery/receptor_preparation/7WC8_recovered.pdbqt",
+      "source_sha256": {
+        "pdb": "f933bd11cfa3c1d853e85ba905d26bfa483c419e640088edf45aa81cd6b17840",
+        "pdbqt": "5f0bc89246715a337c953ffe31517eb2a1a8ee2e1a51e03829597c42e56e0151"
+      },
+      "prepared_sha256": {
+        "pdb": "c8932ec4c00ee26ec9888ee941354d4d5ba25a57b434c1d27e84f1d1ec33aa16",
+        "pdbqt": "6bedd2e7164a96aa84324b95612d27f1e3a03df2d37a61eef5a221553b954858"
+      },
+      "heavy_atoms_before": 2798,
+      "heavy_atoms_after": 2787,
+      "heavy_atom_coordinate_changes": 3,
+      "repairs": [
+        {
+          "receptor": "7WC8",
+          "uniprot_position": 162,
+          "original_resname": "LYS",
+          "prepared_resname": "SER",
+          "issue": "engineered_mutation",
+          "template_selection_reason": "lowest local fit with acceptable steric clearance",
+          "atoms_added": "OG",
+          "donor_receptor": "9LLB",
+          "local_backbone_cb_rmsd_angstrom": 0.027,
+          "local_alignment_atoms": 5,
+          "minimum_new_atom_clearance_angstrom": 2.825,
+          "status": "grafted_from_local_experimental_template",
+          "closest_external_atom": "OG:LEU116:CD1"
+        },
+        {
+          "receptor": "7WC8",
+          "uniprot_position": 164,
+          "original_resname": "TRP",
+          "prepared_resname": "MET",
+          "issue": "engineered_mutation",
+          "template_selection_reason": "lowest local fit with acceptable steric clearance",
+          "atoms_added": "CE;CG;SD",
+          "donor_receptor": "9LLB",
+          "local_backbone_cb_rmsd_angstrom": 0.048,
+          "local_alignment_atoms": 5,
+          "minimum_new_atom_clearance_angstrom": 3.376,
+          "status": "grafted_from_local_experimental_template",
+          "closest_external_atom": "SD:PRO246:CB"
+        },
+        {
+          "receptor": "7WC8",
+          "uniprot_position": 351,
+          "original_resname": "GLU",
+          "prepared_resname": "GLU",
+          "issue": "no_complete_experimental_template",
+          "atoms_added": "",
+          "donor_receptor": "",
+          "local_backbone_cb_rmsd_angstrom": "",
+          "minimum_new_atom_clearance_angstrom": "",
+          "status": "not_reconstructed"
+        },
+        {
+          "receptor": "7WC8",
+          "uniprot_position": 372,
+          "original_resname": "ASN",
+          "prepared_resname": "SER",
+          "issue": "engineered_mutation",
+          "template_selection_reason": "lowest local fit with acceptable steric clearance",
+          "atoms_added": "OG",
+          "donor_receptor": "9LL8",
+          "local_backbone_cb_rmsd_angstrom": 0.065,
+          "local_alignment_atoms": 5,
+          "minimum_new_atom_clearance_angstrom": 3.837,
+          "status": "grafted_from_local_experimental_template",
+          "closest_external_atom": "OG:LEU331:O"
+        }
+      ],
+      "unresolved": [],
+      "deferred_peripheral_residues": [
+        {
+          "uniprot_position": "351",
+          "resname": "GLU",
+          "missing_atoms": "CD;CG;OE1;OE2",
+          "distance_to_box_angstrom": 4.799194203197024,
+          "distance_to_nearest_pilot_pose_angstrom": 12.258168460255387
+        }
+      ],
+      "pdbqt_has_nonzero_partial_charges": true
+    },
+    "9LL8": {
+      "receptor": "9LL8",
+      "source_pdb": "structures/9LL8_chainR_protein.pdb",
+      "source_pdbqt": "structures/9LL8_chainR_protein.pdbqt",
+      "prepared_pdb": "results/docking_recovery/receptor_preparation/9LL8_recovered.pdb",
+      "prepared_pdbqt": "results/docking_recovery/receptor_preparation/9LL8_recovered.pdbqt",
+      "source_sha256": {
+        "pdb": "19ac99b601aa75634f738caa2f990e661c623d584df3f9d0e6f497abfa7b816b",
+        "pdbqt": "6bec325354342d15c71c1f8001a7e5bf83323e151e9ec83d7b9acf40d0c5a892"
+      },
+      "prepared_sha256": {
+        "pdb": "1581f07e160ae9255ad36745b3cd7ecc7d7feb4671f9a318f2a6c681b64583e3",
+        "pdbqt": "6d1b7b2c9784d22ac3fa9071de2b8157f46a7be3bd2915ec0f4c76ac26b902a8"
+      },
+      "heavy_atoms_before": 1993,
+      "heavy_atoms_after": 2019,
+      "heavy_atom_coordinate_changes": 0,
+      "repairs": [
+        {
+          "receptor": "9LL8",
+          "uniprot_position": 146,
+          "original_resname": "LYS",
+          "prepared_resname": "LYS",
+          "issue": "incomplete_sidechain",
+          "template_selection_reason": "joint sidechain fit with ASP218 minimizes a close contact",
+          "atoms_added": "CD;CE;CG;NZ",
+          "donor_receptor": "9LLB",
+          "local_backbone_cb_rmsd_angstrom": 0.17,
+          "local_alignment_atoms": 5,
+          "minimum_new_atom_clearance_angstrom": 4.11,
+          "status": "grafted_from_local_experimental_template",
+          "closest_external_atom": "CG:LEU215:CD2"
+        },
+        {
+          "receptor": "9LL8",
+          "uniprot_position": 216,
+          "original_resname": "GLN",
+          "prepared_resname": "GLN",
+          "issue": "incomplete_sidechain",
+          "template_selection_reason": "lowest local fit with acceptable steric clearance",
+          "atoms_added": "CD;CG;NE2;OE1",
+          "donor_receptor": "7WC8",
+          "local_backbone_cb_rmsd_angstrom": 0.186,
+          "local_alignment_atoms": 5,
+          "minimum_new_atom_clearance_angstrom": 3.088,
+          "status": "grafted_from_local_experimental_template",
+          "closest_external_atom": "NE2:VAL212:O"
+        },
+        {
+          "receptor": "9LL8",
+          "uniprot_position": 217,
+          "original_resname": "ASP",
+          "prepared_resname": "ASP",
+          "issue": "incomplete_sidechain",
+          "template_selection_reason": "lowest local fit with acceptable steric clearance",
+          "atoms_added": "CG;OD1;OD2",
+          "donor_receptor": "7WC8",
+          "local_backbone_cb_rmsd_angstrom": 0.599,
+          "local_alignment_atoms": 5,
+          "minimum_new_atom_clearance_angstrom": 2.874,
+          "status": "grafted_from_local_experimental_template",
+          "closest_external_atom": "OD2:LYS220:CE"
+        },
+        {
+          "receptor": "9LL8",
+          "uniprot_position": 218,
+          "original_resname": "ASP",
+          "prepared_resname": "ASP",
+          "issue": "incomplete_sidechain",
+          "template_selection_reason": "lowest local fit with acceptable steric clearance",
+          "atoms_added": "CG;OD1;OD2",
+          "donor_receptor": "7WC8",
+          "local_backbone_cb_rmsd_angstrom": 0.068,
+          "local_alignment_atoms": 5,
+          "minimum_new_atom_clearance_angstrom": 2.673,
+          "status": "grafted_from_local_experimental_template",
+          "closest_external_atom": "OD1:GLY214:O"
+        },
+        {
+          "receptor": "9LL8",
+          "uniprot_position": 223,
+          "original_resname": "LYS",
+          "prepared_resname": "LYS",
+          "issue": "incomplete_sidechain",
+          "template_selection_reason": "lowest local fit with acceptable steric clearance",
+          "atoms_added": "CD;CE;CG;NZ",
+          "donor_receptor": "7WC8",
+          "local_backbone_cb_rmsd_angstrom": 0.02,
+          "local_alignment_atoms": 5,
+          "minimum_new_atom_clearance_angstrom": 3.115,
+          "status": "grafted_from_local_experimental_template",
+          "closest_external_atom": "CE:LEU228:CD1"
+        },
+        {
+          "receptor": "9LL8",
+          "uniprot_position": 224,
+          "original_resname": "GLU",
+          "prepared_resname": "GLU",
+          "issue": "incomplete_sidechain",
+          "template_selection_reason": "lowest local fit with acceptable steric clearance",
+          "atoms_added": "CD;CG;OE1;OE2",
+          "donor_receptor": "7WC8",
+          "local_backbone_cb_rmsd_angstrom": 0.616,
+          "local_alignment_atoms": 5,
+          "minimum_new_atom_clearance_angstrom": 3.62,
+          "status": "grafted_from_local_experimental_template",
+          "closest_external_atom": "CG:GLY225:N"
+        },
+        {
+          "receptor": "9LL8",
+          "uniprot_position": 355,
+          "original_resname": "GLU",
+          "prepared_resname": "GLU",
+          "issue": "incomplete_sidechain",
+          "template_selection_reason": "lowest local fit with acceptable steric clearance",
+          "atoms_added": "CD;CG;OE1;OE2",
+          "donor_receptor": "7WC8",
+          "local_backbone_cb_rmsd_angstrom": 0.097,
+          "local_alignment_atoms": 5,
+          "minimum_new_atom_clearance_angstrom": 3.166,
+          "status": "grafted_from_local_experimental_template",
+          "closest_external_atom": "CG:ASP356:N"
+        }
+      ],
+      "unresolved": [],
+      "deferred_peripheral_residues": [],
+      "pdbqt_has_nonzero_partial_charges": true
+    },
+    "9LLB": {
+      "receptor": "9LLB",
+      "source_pdb": "structures/9LLB_chainR_protein.pdb",
+      "source_pdbqt": "structures/9LLB_chainR_protein.pdbqt",
+      "prepared_pdb": "results/docking_recovery/receptor_preparation/9LLB_recovered.pdb",
+      "prepared_pdbqt": "results/docking_recovery/receptor_preparation/9LLB_recovered.pdbqt",
+      "source_sha256": {
+        "pdb": "b406349caae76ca45d0c6cb4f9201f30d20b6d13fe79269de24030a38ec51edb",
+        "pdbqt": "cb91998009ded5e7fe05ea99fa65dea23b326d09cfa241a66d049a98612b00cd"
+      },
+      "prepared_sha256": {
+        "pdb": "20ab018e3c397a0bee64c82300ec0af4b18e15f70a4009d8eb2185ac1e210e50",
+        "pdbqt": "00eb36cce4f0017af386e46ceac1f00c82be8444a2020762f507ef5060cd16d4"
+      },
+      "heavy_atoms_before": 2024,
+      "heavy_atoms_after": 2059,
+      "heavy_atom_coordinate_changes": 0,
+      "repairs": [
+        {
+          "receptor": "9LLB",
+          "uniprot_position": 217,
+          "original_resname": "ASP",
+          "prepared_resname": "ASP",
+          "issue": "incomplete_sidechain",
+          "template_selection_reason": "lowest local fit with acceptable steric clearance",
+          "atoms_added": "CG;OD1;OD2",
+          "donor_receptor": "7WC8",
+          "local_backbone_cb_rmsd_angstrom": 0.284,
+          "local_alignment_atoms": 5,
+          "minimum_new_atom_clearance_angstrom": 2.347,
+          "status": "grafted_from_local_experimental_template",
+          "closest_external_atom": "OD1:ASP218:N"
+        },
+        {
+          "receptor": "9LLB",
+          "uniprot_position": 219,
+          "original_resname": "SER",
+          "prepared_resname": "SER",
+          "issue": "incomplete_sidechain",
+          "template_selection_reason": "lowest local fit with acceptable steric clearance",
+          "atoms_added": "OG",
+          "donor_receptor": "7WC8",
+          "local_backbone_cb_rmsd_angstrom": 0.101,
+          "local_alignment_atoms": 5,
+          "minimum_new_atom_clearance_angstrom": 2.945,
+          "status": "grafted_from_local_experimental_template",
+          "closest_external_atom": "OG:LYS220:N"
+        },
+        {
+          "receptor": "9LLB",
+          "uniprot_position": 223,
+          "original_resname": "LYS",
+          "prepared_resname": "LYS",
+          "issue": "incomplete_sidechain",
+          "template_selection_reason": "lowest local fit with acceptable steric clearance",
+          "atoms_added": "CD;CE;CG;NZ",
+          "donor_receptor": "7WC8",
+          "local_backbone_cb_rmsd_angstrom": 0.023,
+          "local_alignment_atoms": 5,
+          "minimum_new_atom_clearance_angstrom": 3.888,
+          "status": "grafted_from_local_experimental_template",
+          "closest_external_atom": "CD:LEU228:CD1"
+        },
+        {
+          "receptor": "9LLB",
+          "uniprot_position": 224,
+          "original_resname": "GLU",
+          "prepared_resname": "GLU",
+          "issue": "incomplete_sidechain",
+          "template_selection_reason": "lowest local fit with acceptable steric clearance",
+          "atoms_added": "CD;CG;OE1;OE2",
+          "donor_receptor": "7WC8",
+          "local_backbone_cb_rmsd_angstrom": 0.658,
+          "local_alignment_atoms": 5,
+          "minimum_new_atom_clearance_angstrom": 3.309,
+          "status": "grafted_from_local_experimental_template",
+          "closest_external_atom": "CG:GLY225:N"
+        },
+        {
+          "receptor": "9LLB",
+          "uniprot_position": 231,
+          "original_resname": "ASP",
+          "prepared_resname": "ASP",
+          "issue": "incomplete_sidechain",
+          "template_selection_reason": "lowest local fit with acceptable steric clearance",
+          "atoms_added": "CG;OD1;OD2",
+          "donor_receptor": "7WC8",
+          "local_backbone_cb_rmsd_angstrom": 0.084,
+          "local_alignment_atoms": 5,
+          "minimum_new_atom_clearance_angstrom": 2.657,
+          "status": "grafted_from_local_experimental_template",
+          "closest_external_atom": "OD1:ASP232:N"
+        },
+        {
+          "receptor": "9LLB",
+          "uniprot_position": 232,
+          "original_resname": "ASP",
+          "prepared_resname": "ASP",
+          "issue": "incomplete_sidechain",
+          "template_selection_reason": "lowest local fit with acceptable steric clearance",
+          "atoms_added": "CG;OD1;OD2",
+          "donor_receptor": "9LL8",
+          "local_backbone_cb_rmsd_angstrom": 0.13,
+          "local_alignment_atoms": 5,
+          "minimum_new_atom_clearance_angstrom": 3.83,
+          "status": "grafted_from_local_experimental_template",
+          "closest_external_atom": "OD1:VAL347:CG1"
+        },
+        {
+          "receptor": "9LLB",
+          "uniprot_position": 330,
+          "original_resname": "PHE",
+          "prepared_resname": "PHE",
+          "issue": "incomplete_sidechain",
+          "template_selection_reason": "lowest local fit with acceptable steric clearance",
+          "atoms_added": "CD1;CD2;CE1;CE2;CG;CZ",
+          "donor_receptor": "7WC8",
+          "local_backbone_cb_rmsd_angstrom": 0.041,
+          "local_alignment_atoms": 5,
+          "minimum_new_atom_clearance_angstrom": 3.421,
+          "status": "grafted_from_local_experimental_template",
+          "closest_external_atom": "CZ:VAL334:CG2"
+        },
+        {
+          "receptor": "9LLB",
+          "uniprot_position": 345,
+          "original_resname": "MET",
+          "prepared_resname": "MET",
+          "issue": "incomplete_sidechain",
+          "template_selection_reason": "lowest local fit with acceptable steric clearance",
+          "atoms_added": "CE;CG;SD",
+          "donor_receptor": "7WC8",
+          "local_backbone_cb_rmsd_angstrom": 0.043,
+          "local_alignment_atoms": 5,
+          "minimum_new_atom_clearance_angstrom": 3.115,
+          "status": "grafted_from_local_experimental_template",
+          "closest_external_atom": "CG:ILE341:O"
+        },
+        {
+          "receptor": "9LLB",
+          "uniprot_position": 349,
+          "original_resname": "CYS",
+          "prepared_resname": "CYS",
+          "issue": "incomplete_sidechain",
+          "template_selection_reason": "lowest local fit with acceptable steric clearance",
+          "atoms_added": "SG",
+          "donor_receptor": "7WC8",
+          "local_backbone_cb_rmsd_angstrom": 0.071,
+          "local_alignment_atoms": 5,
+          "minimum_new_atom_clearance_angstrom": 2.419,
+          "status": "grafted_from_local_experimental_template",
+          "closest_external_atom": "SG:MET345:O"
+        },
+        {
+          "receptor": "9LLB",
+          "uniprot_position": 355,
+          "original_resname": "GLU",
+          "prepared_resname": "GLU",
+          "issue": "incomplete_sidechain",
+          "template_selection_reason": "lowest local fit with acceptable steric clearance",
+          "atoms_added": "CD;CG;OE1;OE2",
+          "donor_receptor": "7WC8",
+          "local_backbone_cb_rmsd_angstrom": 0.039,
+          "local_alignment_atoms": 5,
+          "minimum_new_atom_clearance_angstrom": 3.181,
+          "status": "grafted_from_local_experimental_template",
+          "closest_external_atom": "CG:ASP356:N"
+        },
+        {
+          "receptor": "9LLB",
+          "uniprot_position": 356,
+          "original_resname": "ASP",
+          "prepared_resname": "ASP",
+          "issue": "incomplete_sidechain",
+          "template_selection_reason": "lowest local fit with acceptable steric clearance",
+          "atoms_added": "CG;OD1;OD2",
+          "donor_receptor": "7WC8",
+          "local_backbone_cb_rmsd_angstrom": 0.029,
+          "local_alignment_atoms": 5,
+          "minimum_new_atom_clearance_angstrom": 4.008,
+          "status": "grafted_from_local_experimental_template",
+          "closest_external_atom": "OD1:GLU355:CG"
+        }
+      ],
+      "unresolved": [],
+      "deferred_peripheral_residues": [],
+      "pdbqt_has_nonzero_partial_charges": true
+    }
+  },
+  "ligand_count": 424,
+  "ligand_decisions": {
+    "REPETIR": 341,
+    "REVISIÓN MANUAL": 73,
+    "CONSERVAR": 10
+  },
+  "docking_decisions": {
+    "REPETIR": 1053,
+    "NO DISPONIBLE": 3,
+    "REVISIÓN MANUAL": 216
+  },
+  "mass_scale_ready": true,
+  "mass_docking_preflight": {
+    "status": "READY",
+    "combinations": 1272,
+    "status_counts": {
+      "READY": 1269,
+      "NO DISPONIBLE": 3
+    },
+    "blockers": {
+      "microstate_reviews_pending": 0,
+      "receptors": {
+        "7WC8": {
+          "low_clearance_grafts": [],
+          "unresolved_residues": []
+        },
+        "9LL8": {
+          "low_clearance_grafts": [],
+          "unresolved_residues": []
+        },
+        "9LLB": {
+          "low_clearance_grafts": [],
+          "unresolved_residues": []
+        }
+      }
+    },
+    "pilot_reuse": "NOT_VERIFIED: pilot runs did not record per-run input hashes; all combinations will be run in the final batch to avoid stale reuse",
+    "manifest": "results/docking_recovery/mass_docking_preflight.csv"
+  },
+  "mass_scale_blockers": {
+    "unresolved_receptor_residues": [],
+    "low_clearance_grafts": [],
+    "ambiguous_ligands": [
+      "LIG_AMPWOXFWJLHFJO-UHFFFAOYSA-N",
+      "LIG_AOGNXLLKMCJHMU-UHFFFAOYSA-N",
+      "LIG_BAINIUMDFURPJM-UHFFFAOYSA-N",
+      "LIG_CPSSYKFYAHONTK-RJSZUWSASA-N",
+      "LIG_CPSSYKFYAHONTK-UHFFFAOYSA-N",
+      "LIG_FEBOTPHFXYHVPL-UHFFFAOYSA-N",
+      "LIG_FGXWKSZFVQUSTL-UHFFFAOYSA-N",
+      "LIG_FKPXHUIXQANFLF-VIFPVBQESA-N",
+      "LIG_FNKNXXOTYSIXJT-UHFFFAOYSA-N",
+      "LIG_FPCCSQOGAWCVBH-UHFFFAOYSA-N",
+      "LIG_FRMLYYUFOZRQBA-UHFFFAOYSA-N",
+      "LIG_FTSUPYGMFAPCFZ-ZWNOBZJWSA-N",
+      "LIG_FUWCSEOQHDJGLJ-UHFFFAOYSA-N",
+      "LIG_FYSBKAHWEATMCQ-UHFFFAOYSA-N",
+      "LIG_GGHRBKSXCZIODH-UHFFFAOYSA-N",
+      "LIG_GYDNWDLHOBAGAP-UHFFFAOYSA-N",
+      "LIG_HGEYJZMMUGWEOT-UHFFFAOYSA-N",
+      "LIG_HMZMQOLXLXDNQM-UHFFFAOYSA-N",
+      "LIG_HPXSSTRGWNQATI-UHFFFAOYSA-N",
+      "LIG_HQUSWISCKAODEN-UHFFFAOYSA-N",
+      "LIG_JFPPLMAMMZZOEA-UHFFFAOYSA-N",
+      "LIG_JVSJXWIIUMKNFI-UHFFFAOYSA-N",
+      "LIG_KCFYEAOKVJSACF-UHFFFAOYSA-N",
+      "LIG_KFQYTPMOWPVWEJ-INIZCTEOSA-N",
+      "LIG_LBFGAEZHJXZHFC-UHFFFAOYSA-N",
+      "LIG_MCDJXGIMPBFVQX-UHFFFAOYSA-N",
+      "LIG_MHLPOBYDCKBGIB-UHFFFAOYSA-N",
+      "LIG_MTJOWJUQGYWRHT-UHFFFAOYSA-N",
+      "LIG_MZWUFGTUXRBVNC-UHFFFAOYSA-N",
+      "LIG_NCRYSYHONVWYKZ-UHFFFAOYSA-N",
+      "LIG_OWAUQTRUMWLABY-UHFFFAOYSA-N",
+      "LIG_OZAHEVLLVSEENQ-UHFFFAOYSA-N",
+      "LIG_PDOBPTHIQPAZKB-UHFFFAOYSA-N",
+      "LIG_PPRRDFIXUUSXRA-UHFFFAOYSA-N",
+      "LIG_PVFAYAZDVYXQFR-KHQCYXSFSA-N",
+      "LIG_PVFAYAZDVYXQFR-SNVBAGLBSA-N",
+      "LIG_PXCVJKHVIVHNMT-UHFFFAOYSA-N",
+      "LIG_PYSZMEKSNVCWQE-UHFFFAOYSA-N",
+      "LIG_QABLUDYTCCKNRQ-UHFFFAOYSA-N",
+      "LIG_QHMBSVQNZZTUGM-ZWKOTPCHSA-N",
+      "LIG_QZAYGJVTTNCVMB-UHFFFAOYSA-N",
+      "LIG_RNKVMGQEPKJVOH-UHFFFAOYSA-N",
+      "LIG_RTWSFJCMCLECPU-UHFFFAOYSA-N",
+      "LIG_SKFHANGINXIKJM-UHFFFAOYSA-N",
+      "LIG_SMYALUSCZJXWHG-VNRZBHCFSA-N",
+      "LIG_SPCIYGNTAMCTRO-UHFFFAOYSA-N",
+      "LIG_SXYUBRILLHMIAQ-GFCCVEGCSA-N",
+      "LIG_TUJFUBGJRSXFHG-WYMPLXKRSA-N",
+      "LIG_TUXHQPAMNGTVLT-FOKLQQMPSA-N",
+      "LIG_UCJGJABZCDBEDK-UHFFFAOYSA-N",
+      "LIG_UOWZUVNAGUAEQC-UHFFFAOYSA-N",
+      "LIG_UQGCMOHWSAZKFN-UHFFFAOYSA-N",
+      "LIG_VBYTWILYLYQWAT-UHFFFAOYSA-N",
+      "LIG_VCOFNZANKNBIQI-UHFFFAOYSA-N",
+      "LIG_VKXHBQSULLZYRP-UHFFFAOYSA-N",
+      "LIG_VMWNQDUVQKEIOC-CYBMUJFWSA-N",
+      "LIG_VWEDZTZAXHMZIL-UHFFFAOYSA-N",
+      "LIG_WBMWPOZHYOBPJJ-JQWIXIFHSA-N",
+      "LIG_WDOHIMSNJWQAGJ-UHFFFAOYSA-N",
+      "LIG_WGGHIPHDWDVQSX-UHFFFAOYSA-N",
+      "LIG_WYWIFABBXFUGLM-UHFFFAOYSA-N",
+      "LIG_XBLFSOZINOQZBU-UHFFFAOYSA-N",
+      "LIG_XHIORJNUVOCYKD-UHFFFAOYSA-N",
+      "LIG_XYRKPZYRLSWABB-KMKPOHAJSA-N",
+      "LIG_XYRKPZYRLSWABB-LLVKDONJSA-N",
+      "LIG_XYRKPZYRLSWABB-PFAYAGKDSA-N",
+      "LIG_YJJMKVPZBCHYHD-UHFFFAOYSA-N",
+      "LIG_YOWJZWITFSEAIC-UHFFFAOYSA-N",
+      "LIG_YRFYGHFCSNGREN-UHFFFAOYSA-N",
+      "LIG_YSUDMRFNVJEXBE-UHFFFAOYSA-N",
+      "LIG_YVUQSNJEYSNKRX-UHFFFAOYSA-N",
+      "LIG_YYSLWKJTVSGHOV-UHFFFAOYSA-N"
+    ]
+  },
+  "pilot": {
+    "ligands": [
+      "LIG_LUZRJRNZXALNLM-JGRZULCMSA-N",
+      "LIG_OZVBMTJYIDMWIL-AYFBDAFISA-N",
+      "LIG_SEALOBQTUQIVGU-QNIJNHAOSA-N",
+      "LIG_YDBCEBYHYKAFRX-UHFFFAOYSA-N",
+      "LIG_JRNUKVFYILMMLX-UHFFFAOYSA-N",
+      "LIG_KGMMSPVVHZGPHL-NRFANRHFSA-N",
+      "LIG_HZZZZODVDSHQRG-UHFFFAOYSA-N",
+      "LIG_FWYSMLBETOMXAG-QHCPKHFHSA-N",
+      "LIG_ATQMRMGXINTJHV-UHFFFAOYSA-N",
+      "LIG_PHXJVRSECIGDHY-UHFFFAOYSA-N",
+      "LIG_DUYJMQONPNNFPI-UHFFFAOYSA-N",
+      "LIG_VMMZTSPODIBJBF-UHFFFAOYSA-N"
+    ],
+    "docking_runs": 36,
+    "docking_successes": 36,
+    "prolif_poses": 259,
+    "prolif_reproducibility": {
+      "tested": true,
+      "identical": true,
+      "complex": "7WC8:LIG_LUZRJRNZXALNLM-JGRZULCMSA-N:model1"
+    },
+    "receptors": {
+      "7WC8": {
+        "pose_count": 83,
+        "interaction_event_counts": {
+          "Hydrophobic": 512,
+          "HBDonor": 34,
+          "HBAcceptor": 47,
+          "PiStacking": 40,
+          "Anionic": 0,
+          "Cationic": 24,
+          "CationPi": 1,
+          "PiCation": 5,
+          "VdWContact": 1229
+        },
+        "category_positive_pose_counts": {
+          "Hydrophobic": 83,
+          "HBDonor": 27,
+          "HBAcceptor": 38,
+          "PiStacking": 34,
+          "Anionic": 0,
+          "Cationic": 24,
+          "CationPi": 1,
+          "PiCation": 5,
+          "VdWContact": 83
+        },
+        "diagnostic_ASP155_events": 84
+      },
+      "9LL8": {
+        "pose_count": 84,
+        "interaction_event_counts": {
+          "Hydrophobic": 408,
+          "HBDonor": 43,
+          "HBAcceptor": 31,
+          "PiStacking": 28,
+          "Anionic": 0,
+          "Cationic": 28,
+          "CationPi": 0,
+          "PiCation": 5,
+          "VdWContact": 1075
+        },
+        "category_positive_pose_counts": {
+          "Hydrophobic": 84,
+          "HBDonor": 38,
+          "HBAcceptor": 25,
+          "PiStacking": 27,
+          "Anionic": 0,
+          "Cationic": 28,
+          "CationPi": 0,
+          "PiCation": 5,
+          "VdWContact": 84
+        },
+        "diagnostic_ASP155_events": 93
+      },
+      "9LLB": {
+        "pose_count": 92,
+        "interaction_event_counts": {
+          "Hydrophobic": 500,
+          "HBDonor": 39,
+          "HBAcceptor": 36,
+          "PiStacking": 43,
+          "Anionic": 0,
+          "Cationic": 30,
+          "CationPi": 0,
+          "PiCation": 0,
+          "VdWContact": 1224
+        },
+        "category_positive_pose_counts": {
+          "Hydrophobic": 92,
+          "HBDonor": 36,
+          "HBAcceptor": 31,
+          "PiStacking": 42,
+          "Anionic": 0,
+          "Cationic": 30,
+          "CationPi": 0,
+          "PiCation": 0,
+          "VdWContact": 92
+        },
+        "diagnostic_ASP155_events": 86
+      }
+    },
+    "validity": {
+      "7WC8": "historical_only_input_hashes_not_recorded",
+      "9LL8": "historical_only_receptor_updated_after_pilot",
+      "9LLB": "historical_only_input_hashes_not_recorded"
+    }
+  },
+  "source_hashes_before_and_after_identical": true,
+  "errors": []
+}

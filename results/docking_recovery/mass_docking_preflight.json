@@ -1,0 +1,27 @@
+{
+  "status": "READY",
+  "combinations": 1272,
+  "status_counts": {
+    "READY": 1269,
+    "NO DISPONIBLE": 3
+  },
+  "blockers": {
+    "microstate_reviews_pending": 0,
+    "receptors": {
+      "7WC8": {
+        "low_clearance_grafts": [],
+        "unresolved_residues": []
+      },
+      "9LL8": {
+        "low_clearance_grafts": [],
+        "unresolved_residues": []
+      },
+      "9LLB": {
+        "low_clearance_grafts": [],
+        "unresolved_residues": []
+      }
+    }
+  },
+  "pilot_reuse": "NOT_VERIFIED: pilot runs did not record per-run input hashes; all combinations will be run in the final batch to avoid stale reuse",
+  "manifest": "results/docking_recovery/mass_docking_preflight.csv"
+}

@@ -1,0 +1,2426 @@
+{
+  "n_poses": 259,
+  "reproducibility": {
+    "tested": true,
+    "identical": true,
+    "complex": "7WC8:LIG_LUZRJRNZXALNLM-JGRZULCMSA-N:model1"
+  },
+  "receptor_preparation": {
+    "7WC8": {
+      "receptor_key": "7WC8",
+      "source_pdb": "results/docking_recovery/receptor_preparation/7WC8_recovered.pdb",
+      "source_cif": "receptors/raw/7WC8.cif",
+      "source_docking_pdbqt": "results/docking_recovery/receptor_preparation/7WC8_recovered.pdbqt",
+      "prepared_pdb": "results/docking_recovery/pilot_prolif/receptor_preparation/7WC8_prepared.pdb",
+      "pH": 7.4,
+      "protonation_method": "PDB2PQR 3.8.0 with PROPKA; AMBER force field; nodebump/noopt",
+      "water_policy": "drop-water",
+      "nonstandard_residue_policy": "PDB2PQR-supported residues only; unsupported residues fail explicitly",
+      "source_heavy_atoms": 2787,
+      "prepared_heavy_atoms": 2787,
+      "explicit_hydrogens": 2875,
+      "pdb2pqr_added_heavy_atoms_discarded": 41,
+      "removed_nonlocal_inter_residue_bonds": [],
+      "added_same_residue_hydrogen_bonds": [],
+      "carboxylate_bond_order_adjustments": [
+        {
+          "residue": [
+            "A",
+            73,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            73,
+            "",
+            "GLU",
+            "OE1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            73,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            73,
+            "",
+            "GLU",
+            "OE2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            102,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            102,
+            "",
+            "GLU",
+            "OE1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            102,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            102,
+            "",
+            "GLU",
+            "OE2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            155,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            155,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            155,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            155,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            172,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            172,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            172,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            172,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            217,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            217,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            217,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            217,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            218,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            218,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            218,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            218,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            224,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            224,
+            "",
+            "GLU",
+            "OE1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            224,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            224,
+            "",
+            "GLU",
+            "OE2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            231,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            231,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            231,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            231,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            232,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            232,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            232,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            232,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            264,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            264,
+            "",
+            "GLU",
+            "OE1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            264,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            264,
+            "",
+            "GLU",
+            "OE2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1002,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            1002,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1002,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            1002,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1004,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            1004,
+            "",
+            "GLU",
+            "OE1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1004,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            1004,
+            "",
+            "GLU",
+            "OE2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1005,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            1005,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1005,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            1005,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1008,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            1008,
+            "",
+            "GLU",
+            "OE1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1008,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            1008,
+            "",
+            "GLU",
+            "OE2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1012,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            1012,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1012,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            1012,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1018,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            1018,
+            "",
+            "GLU",
+            "OE1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1018,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            1018,
+            "",
+            "GLU",
+            "OE2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1021,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            1021,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1021,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            1021,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1028,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            1028,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1028,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            1028,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1039,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            1039,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1039,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            1039,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1066,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            1066,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1066,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            1066,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1073,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            1073,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1073,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            1073,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1074,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            1074,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1074,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            1074,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1081,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            1081,
+            "",
+            "GLU",
+            "OE1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1081,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            1081,
+            "",
+            "GLU",
+            "OE2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1086,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            1086,
+            "",
+            "GLU",
+            "OE1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1086,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            1086,
+            "",
+            "GLU",
+            "OE2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1092,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            1092,
+            "",
+            "GLU",
+            "OE1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            1092,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            1092,
+            "",
+            "GLU",
+            "OE2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            318,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            318,
+            "",
+            "GLU",
+            "OE1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            318,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            318,
+            "",
+            "GLU",
+            "OE2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            355,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            355,
+            "",
+            "GLU",
+            "OE1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            355,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "A",
+            355,
+            "",
+            "GLU",
+            "OE2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            356,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            356,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "A",
+            356,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "A",
+            356,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        }
+      ],
+      "diagnostic_residues": {
+        "ASP155": {
+          "present": true,
+          "chain": "A",
+          "residue_number": 155,
+          "residue_name": "ASP",
+          "heavy_atom_names": [
+            "C",
+            "CA",
+            "CB",
+            "CG",
+            "N",
+            "O",
+            "OD1",
+            "OD2"
+          ],
+          "missing_expected_heavy_atoms": [],
+          "aromatic_heavy_atoms": [],
+          "explicit_hydrogen_count": 4,
+          "carboxyl_oxygen_formal_charges": {
+            "OD1": -1,
+            "OD2": 0
+          }
+        },
+        "PHE339": {
+          "present": true,
+          "chain": "A",
+          "residue_number": 339,
+          "residue_name": "PHE",
+          "heavy_atom_names": [
+            "C",
+            "CA",
+            "CB",
+            "CD1",
+            "CD2",
+            "CE1",
+            "CE2",
+            "CG",
+            "CZ",
+            "N",
+            "O"
+          ],
+          "missing_expected_heavy_atoms": [],
+          "aromatic_heavy_atoms": [
+            "CD1",
+            "CD2",
+            "CE1",
+            "CE2",
+            "CG",
+            "CZ"
+          ],
+          "explicit_hydrogen_count": 9,
+          "carboxyl_oxygen_formal_charges": {}
+        },
+        "PHE340": {
+          "present": true,
+          "chain": "A",
+          "residue_number": 340,
+          "residue_name": "PHE",
+          "heavy_atom_names": [
+            "C",
+            "CA",
+            "CB",
+            "CD1",
+            "CD2",
+            "CE1",
+            "CE2",
+            "CG",
+            "CZ",
+            "N",
+            "O"
+          ],
+          "missing_expected_heavy_atoms": [],
+          "aromatic_heavy_atoms": [
+            "CD1",
+            "CD2",
+            "CE1",
+            "CE2",
+            "CG",
+            "CZ"
+          ],
+          "explicit_hydrogen_count": 9,
+          "carboxyl_oxygen_formal_charges": {}
+        },
+        "ASN343": {
+          "present": true,
+          "chain": "A",
+          "residue_number": 343,
+          "residue_name": "ASN",
+          "heavy_atom_names": [
+            "C",
+            "CA",
+            "CB",
+            "CG",
+            "N",
+            "ND2",
+            "O",
+            "OD1"
+          ],
+          "missing_expected_heavy_atoms": [],
+          "aromatic_heavy_atoms": [],
+          "explicit_hydrogen_count": 6,
+          "carboxyl_oxygen_formal_charges": {}
+        },
+        "TRP336": {
+          "present": true,
+          "chain": "A",
+          "residue_number": 336,
+          "residue_name": "TRP",
+          "heavy_atom_names": [
+            "C",
+            "CA",
+            "CB",
+            "CD1",
+            "CD2",
+            "CE2",
+            "CE3",
+            "CG",
+            "CH2",
+            "CZ2",
+            "CZ3",
+            "N",
+            "NE1",
+            "O"
+          ],
+          "missing_expected_heavy_atoms": [],
+          "aromatic_heavy_atoms": [
+            "CD1",
+            "CD2",
+            "CE2",
+            "CE3",
+            "CG",
+            "CH2",
+            "CZ2",
+            "CZ3",
+            "NE1"
+          ],
+          "explicit_hydrogen_count": 10,
+          "carboxyl_oxygen_formal_charges": {}
+        }
+      },
+      "max_heavy_atom_coordinate_delta_angstrom": 0.0,
+      "sanitization_problems_after_corrections": 0,
+      "pdb2pqr_log": "results/docking_recovery/pilot_prolif/logs/7WC8_pdb2pqr.log"
+    },
+    "9LL8": {
+      "receptor_key": "9LL8",
+      "source_pdb": "results/docking_recovery/receptor_preparation/9LL8_recovered.pdb",
+      "source_cif": "receptors/raw/9LL8.cif",
+      "source_docking_pdbqt": "results/docking_recovery/receptor_preparation/9LL8_recovered.pdbqt",
+      "prepared_pdb": "results/docking_recovery/pilot_prolif/receptor_preparation/9LL8_prepared.pdb",
+      "pH": 7.4,
+      "protonation_method": "PDB2PQR 3.8.0 with PROPKA; AMBER force field; nodebump/noopt",
+      "water_policy": "drop-water",
+      "nonstandard_residue_policy": "PDB2PQR-supported residues only; unsupported residues fail explicitly",
+      "source_heavy_atoms": 2019,
+      "prepared_heavy_atoms": 2019,
+      "explicit_hydrogens": 2102,
+      "pdb2pqr_added_heavy_atoms_discarded": 20,
+      "removed_nonlocal_inter_residue_bonds": [],
+      "added_same_residue_hydrogen_bonds": [],
+      "carboxylate_bond_order_adjustments": [
+        {
+          "residue": [
+            "R",
+            102,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "R",
+            102,
+            "",
+            "GLU",
+            "OE1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            102,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "R",
+            102,
+            "",
+            "GLU",
+            "OE2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            120,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            120,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            120,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            120,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            155,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            155,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            155,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            155,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            172,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            172,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            172,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            172,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            217,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            217,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            217,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            217,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            218,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            218,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            218,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            218,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            224,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "R",
+            224,
+            "",
+            "GLU",
+            "OE1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            224,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "R",
+            224,
+            "",
+            "GLU",
+            "OE2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            231,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            231,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            231,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            231,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            232,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            232,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            232,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            232,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            318,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "R",
+            318,
+            "",
+            "GLU",
+            "OE1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            318,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "R",
+            318,
+            "",
+            "GLU",
+            "OE2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            355,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "R",
+            355,
+            "",
+            "GLU",
+            "OE1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            355,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "R",
+            355,
+            "",
+            "GLU",
+            "OE2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            356,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            356,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            356,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            356,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        }
+      ],
+      "diagnostic_residues": {
+        "ASP155": {
+          "present": true,
+          "chain": "R",
+          "residue_number": 155,
+          "residue_name": "ASP",
+          "heavy_atom_names": [
+            "C",
+            "CA",
+            "CB",
+            "CG",
+            "N",
+            "O",
+            "OD1",
+            "OD2"
+          ],
+          "missing_expected_heavy_atoms": [],
+          "aromatic_heavy_atoms": [],
+          "explicit_hydrogen_count": 4,
+          "carboxyl_oxygen_formal_charges": {
+            "OD1": -1,
+            "OD2": 0
+          }
+        },
+        "PHE339": {
+          "present": true,
+          "chain": "R",
+          "residue_number": 339,
+          "residue_name": "PHE",
+          "heavy_atom_names": [
+            "C",
+            "CA",
+            "CB",
+            "CD1",
+            "CD2",
+            "CE1",
+            "CE2",
+            "CG",
+            "CZ",
+            "N",
+            "O"
+          ],
+          "missing_expected_heavy_atoms": [],
+          "aromatic_heavy_atoms": [
+            "CD1",
+            "CD2",
+            "CE1",
+            "CE2",
+            "CG",
+            "CZ"
+          ],
+          "explicit_hydrogen_count": 9,
+          "carboxyl_oxygen_formal_charges": {}
+        },
+        "PHE340": {
+          "present": true,
+          "chain": "R",
+          "residue_number": 340,
+          "residue_name": "PHE",
+          "heavy_atom_names": [
+            "C",
+            "CA",
+            "CB",
+            "CD1",
+            "CD2",
+            "CE1",
+            "CE2",
+            "CG",
+            "CZ",
+            "N",
+            "O"
+          ],
+          "missing_expected_heavy_atoms": [],
+          "aromatic_heavy_atoms": [
+            "CD1",
+            "CD2",
+            "CE1",
+            "CE2",
+            "CG",
+            "CZ"
+          ],
+          "explicit_hydrogen_count": 9,
+          "carboxyl_oxygen_formal_charges": {}
+        },
+        "ASN343": {
+          "present": true,
+          "chain": "R",
+          "residue_number": 343,
+          "residue_name": "ASN",
+          "heavy_atom_names": [
+            "C",
+            "CA",
+            "CB",
+            "CG",
+            "N",
+            "ND2",
+            "O",
+            "OD1"
+          ],
+          "missing_expected_heavy_atoms": [],
+          "aromatic_heavy_atoms": [],
+          "explicit_hydrogen_count": 6,
+          "carboxyl_oxygen_formal_charges": {}
+        },
+        "TRP336": {
+          "present": true,
+          "chain": "R",
+          "residue_number": 336,
+          "residue_name": "TRP",
+          "heavy_atom_names": [
+            "C",
+            "CA",
+            "CB",
+            "CD1",
+            "CD2",
+            "CE2",
+            "CE3",
+            "CG",
+            "CH2",
+            "CZ2",
+            "CZ3",
+            "N",
+            "NE1",
+            "O"
+          ],
+          "missing_expected_heavy_atoms": [],
+          "aromatic_heavy_atoms": [
+            "CD1",
+            "CD2",
+            "CE2",
+            "CE3",
+            "CG",
+            "CH2",
+            "CZ2",
+            "CZ3",
+            "NE1"
+          ],
+          "explicit_hydrogen_count": 10,
+          "carboxyl_oxygen_formal_charges": {}
+        }
+      },
+      "max_heavy_atom_coordinate_delta_angstrom": 0.0,
+      "sanitization_problems_after_corrections": 0,
+      "pdb2pqr_log": "results/docking_recovery/pilot_prolif/logs/9LL8_pdb2pqr.log"
+    },
+    "9LLB": {
+      "receptor_key": "9LLB",
+      "source_pdb": "results/docking_recovery/receptor_preparation/9LLB_recovered.pdb",
+      "source_cif": "receptors/raw/9LLB.cif",
+      "source_docking_pdbqt": "results/docking_recovery/receptor_preparation/9LLB_recovered.pdbqt",
+      "prepared_pdb": "results/docking_recovery/pilot_prolif/receptor_preparation/9LLB_prepared.pdb",
+      "pH": 7.4,
+      "protonation_method": "PDB2PQR 3.8.0 with PROPKA; AMBER force field; nodebump/noopt",
+      "water_policy": "drop-water",
+      "nonstandard_residue_policy": "PDB2PQR-supported residues only; unsupported residues fail explicitly",
+      "source_heavy_atoms": 2059,
+      "prepared_heavy_atoms": 2059,
+      "explicit_hydrogens": 2154,
+      "pdb2pqr_added_heavy_atoms_discarded": 8,
+      "removed_nonlocal_inter_residue_bonds": [],
+      "added_same_residue_hydrogen_bonds": [],
+      "carboxylate_bond_order_adjustments": [
+        {
+          "residue": [
+            "R",
+            102,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "R",
+            102,
+            "",
+            "GLU",
+            "OE1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            102,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "R",
+            102,
+            "",
+            "GLU",
+            "OE2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            155,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            155,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            155,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            155,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            172,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            172,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            172,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            172,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            217,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            217,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            217,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            217,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            218,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            218,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            218,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            218,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            224,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "R",
+            224,
+            "",
+            "GLU",
+            "OE1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            224,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "R",
+            224,
+            "",
+            "GLU",
+            "OE2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            231,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            231,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            231,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            231,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            232,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            232,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            232,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            232,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            318,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "R",
+            318,
+            "",
+            "GLU",
+            "OE1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            318,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "R",
+            318,
+            "",
+            "GLU",
+            "OE2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            355,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "R",
+            355,
+            "",
+            "GLU",
+            "OE1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            355,
+            "",
+            "GLU"
+          ],
+          "atom": [
+            "R",
+            355,
+            "",
+            "GLU",
+            "OE2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            356,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            356,
+            "",
+            "ASP",
+            "OD1"
+          ],
+          "old_bond_order": "DOUBLE",
+          "new_bond_order": "SINGLE",
+          "protonation": "carboxylate"
+        },
+        {
+          "residue": [
+            "R",
+            356,
+            "",
+            "ASP"
+          ],
+          "atom": [
+            "R",
+            356,
+            "",
+            "ASP",
+            "OD2"
+          ],
+          "old_bond_order": "SINGLE",
+          "new_bond_order": "DOUBLE",
+          "protonation": "carboxylate"
+        }
+      ],
+      "diagnostic_residues": {
+        "ASP155": {
+          "present": true,
+          "chain": "R",
+          "residue_number": 155,
+          "residue_name": "ASP",
+          "heavy_atom_names": [
+            "C",
+            "CA",
+            "CB",
+            "CG",
+            "N",
+            "O",
+            "OD1",
+            "OD2"
+          ],
+          "missing_expected_heavy_atoms": [],
+          "aromatic_heavy_atoms": [],
+          "explicit_hydrogen_count": 4,
+          "carboxyl_oxygen_formal_charges": {
+            "OD1": -1,
+            "OD2": 0
+          }
+        },
+        "PHE339": {
+          "present": true,
+          "chain": "R",
+          "residue_number": 339,
+          "residue_name": "PHE",
+          "heavy_atom_names": [
+            "C",
+            "CA",
+            "CB",
+            "CD1",
+            "CD2",
+            "CE1",
+            "CE2",
+            "CG",
+            "CZ",
+            "N",
+            "O"
+          ],
+          "missing_expected_heavy_atoms": [],
+          "aromatic_heavy_atoms": [
+            "CD1",
+            "CD2",
+            "CE1",
+            "CE2",
+            "CG",
+            "CZ"
+          ],
+          "explicit_hydrogen_count": 9,
+          "carboxyl_oxygen_formal_charges": {}
+        },
+        "PHE340": {
+          "present": true,
+          "chain": "R",
+          "residue_number": 340,
+          "residue_name": "PHE",
+          "heavy_atom_names": [
+            "C",
+            "CA",
+            "CB",
+            "CD1",
+            "CD2",
+            "CE1",
+            "CE2",
+            "CG",
+            "CZ",
+            "N",
+            "O"
+          ],
+          "missing_expected_heavy_atoms": [],
+          "aromatic_heavy_atoms": [
+            "CD1",
+            "CD2",
+            "CE1",
+            "CE2",
+            "CG",
+            "CZ"
+          ],
+          "explicit_hydrogen_count": 9,
+          "carboxyl_oxygen_formal_charges": {}
+        },
+        "ASN343": {
+          "present": true,
+          "chain": "R",
+          "residue_number": 343,
+          "residue_name": "ASN",
+          "heavy_atom_names": [
+            "C",
+            "CA",
+            "CB",
+            "CG",
+            "N",
+            "ND2",
+            "O",
+            "OD1"
+          ],
+          "missing_expected_heavy_atoms": [],
+          "aromatic_heavy_atoms": [],
+          "explicit_hydrogen_count": 6,
+          "carboxyl_oxygen_formal_charges": {}
+        },
+        "TRP336": {
+          "present": true,
+          "chain": "R",
+          "residue_number": 336,
+          "residue_name": "TRP",
+          "heavy_atom_names": [
+            "C",
+            "CA",
+            "CB",
+            "CD1",
+            "CD2",
+            "CE2",
+            "CE3",
+            "CG",
+            "CH2",
+            "CZ2",
+            "CZ3",
+            "N",
+            "NE1",
+            "O"
+          ],
+          "missing_expected_heavy_atoms": [],
+          "aromatic_heavy_atoms": [
+            "CD1",
+            "CD2",
+            "CE2",
+            "CE3",
+            "CG",
+            "CH2",
+            "CZ2",
+            "CZ3",
+            "NE1"
+          ],
+          "explicit_hydrogen_count": 10,
+          "carboxyl_oxygen_formal_charges": {}
+        }
+      },
+      "max_heavy_atom_coordinate_delta_angstrom": 0.0,
+      "sanitization_problems_after_corrections": 0,
+      "pdb2pqr_log": "results/docking_recovery/pilot_prolif/logs/9LLB_pdb2pqr.log"
+    }
+  },
+  "receptors": {
+    "7WC8": {
+      "pose_count": 83,
+      "interaction_event_counts": {
+        "Hydrophobic": 512,
+        "HBDonor": 34,
+        "HBAcceptor": 47,
+        "PiStacking": 40,
+        "Anionic": 0,
+        "Cationic": 24,
+        "CationPi": 1,
+        "PiCation": 5,
+        "VdWContact": 1229
+      },
+      "category_positive_pose_counts": {
+        "Hydrophobic": 83,
+        "HBDonor": 27,
+        "HBAcceptor": 38,
+        "PiStacking": 34,
+        "Anionic": 0,
+        "Cationic": 24,
+        "CationPi": 1,
+        "PiCation": 5,
+        "VdWContact": 83
+      },
+      "diagnostic_ASP155_events": 84
+    },
+    "9LL8": {
+      "pose_count": 84,
+      "interaction_event_counts": {
+        "Hydrophobic": 408,
+        "HBDonor": 43,
+        "HBAcceptor": 31,
+        "PiStacking": 28,
+        "Anionic": 0,
+        "Cationic": 28,
+        "CationPi": 0,
+        "PiCation": 5,
+        "VdWContact": 1075
+      },
+      "category_positive_pose_counts": {
+        "Hydrophobic": 84,
+        "HBDonor": 38,
+        "HBAcceptor": 25,
+        "PiStacking": 27,
+        "Anionic": 0,
+        "Cationic": 28,
+        "CationPi": 0,
+        "PiCation": 5,
+        "VdWContact": 84
+      },
+      "diagnostic_ASP155_events": 93
+    },
+    "9LLB": {
+      "pose_count": 92,
+      "interaction_event_counts": {
+        "Hydrophobic": 500,
+        "HBDonor": 39,
+        "HBAcceptor": 36,
+        "PiStacking": 43,
+        "Anionic": 0,
+        "Cationic": 30,
+        "CationPi": 0,
+        "PiCation": 0,
+        "VdWContact": 1224
+      },
+      "category_positive_pose_counts": {
+        "Hydrophobic": 92,
+        "HBDonor": 36,
+        "HBAcceptor": 31,
+        "PiStacking": 42,
+        "Anionic": 0,
+        "Cationic": 30,
+        "CationPi": 0,
+        "PiCation": 0,
+        "VdWContact": 92
+      },
+      "diagnostic_ASP155_events": 86
+    }
+  },
+  "interaction_categories": [
+    "Hydrophobic",
+    "HBDonor",
+    "HBAcceptor",
+    "PiStacking",
+    "Anionic",
+    "Cationic",
+    "CationPi",
+    "PiCation",
+    "VdWContact"
+  ]
+}

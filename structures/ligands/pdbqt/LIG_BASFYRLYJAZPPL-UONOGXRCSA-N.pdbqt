@@ -1,0 +1,35 @@
+REMARK  Name = LIG_BASFYRLYJAZPPL-UONOGXRCSA-N
+REMARK  3 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C_4  and  C_5
+REMARK    2  A    between atoms: C_7  and  N_8
+REMARK    3  A    between atoms: N_8  and  C_9
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C   UNL     1       1.638   1.045   0.432  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1       0.611   0.790   1.510  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1       0.438   0.156   0.163  0.00  0.00    +0.000 C 
+ENDROOT
+BRANCH   1   7
+ATOM      4  C   UNL     1       5.609  -0.675   0.709  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1       4.836  -0.879  -0.430  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1       3.556  -0.325  -0.513  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1       3.016   0.436   0.537  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1       3.822   0.636   1.670  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1       5.103   0.085   1.760  0.00  0.00    +0.000 A 
+ENDBRANCH   1   7
+BRANCH   3  10
+ATOM     10  N   UNL     1      -0.608   0.633  -0.754  0.00  0.00    +0.000 NA
+ATOM     11  H   UNL     1      -0.839   1.611  -0.586  0.00  0.00    +0.000 HD
+BRANCH  10  12
+ATOM     12  C   UNL     1      -1.831  -0.183  -0.723  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      -2.716   0.170  -1.920  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      -3.951  -0.739  -1.960  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      -4.416  -1.179  -0.642  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      -4.133  -0.198   0.395  0.00  0.00    +0.000 C 
+ATOM     17  C   UNL     1      -2.625  -0.004   0.584  0.00  0.00    +0.000 C 
+ATOM     18  H   UNL     1      -5.415  -1.379  -0.682  0.00  0.00    +0.000 HD
+ENDBRANCH  10  12
+ENDBRANCH   3  10
+TORSDOF 3

@@ -1,0 +1,18 @@
+name: ultradock-5ht2a
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - openbabel=3.1.1
+  - pip
+  - pip:
+      - numpy==2.4.6
+      - scipy==1.17.1
+      - pandas==3.0.3
+      - networkx==3.6.1
+      - rdkit==2025.9.6
+      - prolif==2.2.0
+      - dimorphite-dl==2.0.2
+      - pdb2pqr==3.8.0
+      - gemmi==0.7.5
+      - MDAnalysis==2.10.0
